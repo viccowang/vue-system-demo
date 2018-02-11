@@ -1,6 +1,8 @@
-# vicco-resume
+# vue-system-demo
+---
+#### 测试基于 Vue&VueX的前后端管理平台实现套路与前期调研填坑,仅供学习使用;
 
-> vicco 
+> Vicco Wang 
 
 ## Build Setup
 
