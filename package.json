@@ -1,7 +1,7 @@
 {
-  "name": "vicco-resume",
+  "name": "vue-system-demo",
   "version": "1.0.0",
-  "description": "vicco's resume",
+  "description": "准备用该系统尝试制作基于vue的前后端管理平台,该项目目前仅用于学习和测试",
   "author": "viccowang <viccowang@gmail.com>",
   "private": true,
   "scripts": {
