@@ -53,8 +53,10 @@ export default {
             if (lastView) {
               this.$router.push(lastView.path)
             } else {
-              // 如果啥都不存在则直接跳转根路由
+              // 保证最后不能出现空visitedList
+              // TODO 应该做一个可以默认无法关闭的首页view
               this.$router.push('/')
+              if (view.path === '/dash') this.$store.dispatch('addVisitedViews', view)
             }
           }
         }

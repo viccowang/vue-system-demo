@@ -14,13 +14,13 @@ export const aysncRoutesMap = [
         path: 'demo-list',
         name: 'demoList',
         component: _import_('DemoList/index'),
-        meta: { title: 'demoList', icon: '' }
+        meta: { title: 'demoList', icon: '', noCache: true }
       },
       {
         path: 'demo-chart',
         name: 'demoChart',
         component: _import_('DemoChart/index'),
-        meta: { title: 'demoChart', icon: '' }
+        meta: { title: 'demoChart', icon: '', noCache: false }
       }
     ]
   },
@@ -33,7 +33,7 @@ export const aysncRoutesMap = [
         path: 'user-list',
         name: 'userList',
         component: _import_('Manage/UserList/index'),
-        meta: { title: 'userList', icon: '', keepAlive: true }
+        meta: { title: 'userList', icon: '' }
       }
     ]
   }
