@@ -41,7 +41,7 @@ export default {
     padding:0 5px;
     color: lighten($base-light-color, 100%);
     background-color: lighten($base-dark-color, 3%);
-    border-bottom: 1px solid darken($base-light-color, 3%);
+    // border-bottom: 1px solid darken($base-light-color, 3%);
 
     .logo{
         padding:0 15px;
