@@ -1,9 +1,16 @@
 <template>
-    <el-aside class="side" width="220px">
-      <el-menu mode="vertical" :default-active="$route.path">
-        <sidebar-menu-item :routes="asyncRouter"></sidebar-menu-item>
-      </el-menu>
-    </el-aside>
+    <div class="sidebar">
+      <!-- <div class="logo">System LOGO</div> -->
+      <div class="side">
+        <el-menu mode="vertical"
+                  :default-active="$route.path"
+                  background-color="#304156"
+                  text-color="#bfcbd9"
+                  active-text-color="#409EFF">
+          <sidebar-menu-item :routes="asyncRouter"></sidebar-menu-item>
+        </el-menu>
+    </div>
+    </div>
 </template>
 
 <script>
@@ -22,8 +29,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.side{
-  background-color: darken($base-light-color, 1%);
-  border-right: 1px solid darken($base-light-color, 3%);
+
+$sidebar-background-color: #304156;
+
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  width:180px;
+  background: $sidebar-background-color;
+  overflow: hidden;
+
+  .logo{
+    padding:10px 0;
+    color: #fff;
+    font-size:1.6rem;
+    font-weight:300;
+    display: inherit;
+    @include flexCenter;
+    background-color:darken($sidebar-background-color,8%);
+  }
+
+  .side{
+    ul {
+      border-right:none;
+    }
+  }
 }
+
 </style>

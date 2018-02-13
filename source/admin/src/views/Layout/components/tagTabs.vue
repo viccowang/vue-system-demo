@@ -68,12 +68,13 @@ export default {
 
 <style lang="scss" scoped>
 .tag-tabs{
+  height:30px;
   background-color: $base-light-color;
 
   .tab-item{
     display: inline-flex;
     align-items: center;
-    padding:8px 10px 8px 15px;
+    padding:6px 10px 6px 15px;
     background-color: lighten($base-gray-color, 18%);
     border-right:1px solid lighten($base-gray-color, 5%);
     box-sizing:border-box;

@@ -2,7 +2,7 @@
     <div class="sidebar-wrapper">
         <template v-for="item in routes" v-if="!item.hidden && item.children">
             <!-- no children -->
-            <router-link v-if="item.children.length === 1 && !item.children[0].children"
+            <router-link tag="li" v-if="item.children.length === 1 && !item.children[0].children"
                         :to="item.path + '/' + item.children[0].path"
                         :key="item.children[0].name">
                 <el-menu-item :index="item.path + '/' + item.children[0].path" :class="{'submenu-title-noDropdown':!isNest}">
@@ -20,7 +20,7 @@
                     <sidebar-menu-item  v-if="child.children && child.children.length > 0"
                         :is-nest="true" class="nest-menu" :routes="[child]" :key="child.path">
                     </sidebar-menu-item>
-                    <router-link v-else :to="item.path + '/' + child.path" :key="child.name">
+                    <router-link tag="li" v-else :to="item.path + '/' + child.path" :key="child.name">
                         <el-menu-item :index="item.path + '/' + child.path">
                             <i v-if="child.meta && child.meta.icon" :icon-class="child.meta.icon"></i>
                             <span v-if="child.meta && child.meta.title">{{ child.meta.title }}</span>

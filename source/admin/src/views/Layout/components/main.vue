@@ -36,7 +36,7 @@ export default {
     width:100%;
 
     .main {
-    padding:0;
+      padding:0;
     }
 
 }

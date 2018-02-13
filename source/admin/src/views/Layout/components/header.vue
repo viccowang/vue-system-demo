@@ -1,6 +1,5 @@
 <template>
-    <el-header class="header" height="40px">
-        <div class="logo">Management System</div>
+    <el-header class="header" height="35px">
         <div class="center">
             <div class="user">
                 <span class="avatar">
@@ -38,19 +37,9 @@ export default {
 <style lang="scss" scoped>
 .header{
     display: flex;
-    padding:0 5px;
-    color: lighten($base-light-color, 100%);
-    background-color: lighten($base-dark-color, 3%);
-    // border-bottom: 1px solid darken($base-light-color, 3%);
-
-    .logo{
-        padding:0 15px;
-        font-size:1.6rem;
-        font-weight:300;
-        display: inherit;
-        @include flexCenter;
-    }
-
+    padding:0;
+    // color: lighten($base-light-color, 100%);
+    background-color: darken($base-light-color, 3%);
     .center{
         flex:1;
         position: relative;

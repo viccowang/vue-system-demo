@@ -1,50 +1,45 @@
 <template>
-  <el-container class="layout">
-    <Headers />
-    <el-container>
-      <Sidebar class="sidebar" />
-      <el-container class="main-content">
-        <TagTabs class="tag-tabs" />
-        <Main class="main" />
-      </el-container>
-    </el-container>
-  </el-container>
+  <div class="layout">
+    <sidebar></sidebar>
+    <div class="main-content">
+      <headers></headers>
+      <tag-tabs></tag-tabs>
+      <app-main class="main-wrapper"></app-main>
+    </div>
+  </div>
 </template>
 
 <script>
-import Headers from './components/header'
-import Sidebar from './components/Sidebar'
-import TagTabs from './components/tagTabs'
-import Main from './components/main'
+import headers from './components/header'
+import sidebar from './components/Sidebar'
+import tagTabs from './components/tagTabs'
+import appMain from './components/main'
 
 export default {
   name: 'Layout',
   components: {
-    Headers,
-    Sidebar,
-    TagTabs,
-    Main
+    headers,
+    sidebar,
+    tagTabs,
+    appMain
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .layout{
-  height:100vh;
   display:flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  .sidebar{
-    background: lighten($base-light-color, 100%);
-  }
+  width:100%;
+  height:100%;
 
   .main-content{
-    flex-direction: column;
+      flex:1;
+      display: inherit;
+      flex-direction: column;
 
-    .tag-tabs{ height: 35px;}
-    .main { flex:1 }
-
+      .main-wrapper{
+        flex:1;
+      }
   }
 }
 </style>
