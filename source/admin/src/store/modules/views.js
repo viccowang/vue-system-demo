@@ -34,6 +34,13 @@ const views = {
           break
         }
       }
+    },
+    //
+    REMOVE_ALL_VISITED (state, route) {
+      state.visitedViews = []
+      state.cachedViews = []
+      state.breadcrumb = []
+      state._theNextView = null
     }
   },
 
@@ -45,6 +52,12 @@ const views = {
       return new Promise((resolve, reject) => {
         commit('REMOVE_VISITED_VIEW', route)
         resolve({views: state.visitedViews, theNextView: state._theNextView})
+      })
+    },
+    removeAllVisited ({ commit }) {
+      return new Promise((resolve, reject) => {
+        commit('REMOVE_ALL_VISITED')
+        resolve()
       })
     }
   }

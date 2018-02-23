@@ -30,6 +30,7 @@ const store = {
     RESET_USERINFO (state, data) {
       state.name = ''
       state.avatar = ''
+      state.token = null
       state.roles = null
     }
   },
