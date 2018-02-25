@@ -1,3 +1,7 @@
+/**
+ * Charts Demo Data
+ *
+*/
 export const barChar1Data = {
   xAxis: {
     type: 'category',
