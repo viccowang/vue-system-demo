@@ -19,8 +19,8 @@ function hasPermession (roles, hasMetaRole) {
 }
 
 // premissions
-// 简单昨个登录的验证
-// 这里后面需要挂权限,生成权限路由表
+// 简单登录的验证
+// 这里后面挂权限,生成权限路由表
 router.beforeEach((to, from, next) => {
   if (getToken()) {
     if (to.path === '/login') {

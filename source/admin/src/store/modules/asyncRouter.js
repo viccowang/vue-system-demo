@@ -47,6 +47,10 @@ const asyncRouter = {
     SET_ROUTERS: (state, router) => {
       state.addRouters = router
       state.router = constantRouterMap.concat(router)
+    },
+    RESET_ROUTERS: (state, router) => {
+      state.addRouters = null
+      state.router = constantRouterMap
     }
   },
 
