@@ -2,11 +2,11 @@
   <div id="app">
     <VuePerfectScrollbar class="scroll-area" :settings="scrollOptions">
       <div class="app-wrapper">
-        <vicco-resume-header></vicco-resume-header>
+        <system-header></system-header>
         <div class="main">
           <router-view></router-view>
         </div>
-        <vicco-resume-footer></vicco-resume-footer>
+        <system-footer></system-footer>
       </div>
     </VuePerfectScrollbar>
   </div>
@@ -27,8 +27,8 @@ export default {
     }
   },
   components: {
-    'vicco-resume-header': Header,
-    'vicco-resume-footer': Footer,
+    'system-header': Header,
+    'system-footer': Footer,
     VuePerfectScrollbar
   }
 }

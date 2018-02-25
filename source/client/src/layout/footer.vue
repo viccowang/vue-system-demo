@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'vicco-resume-footer'
+  name: 'system-footer'
 }
 </script>
 

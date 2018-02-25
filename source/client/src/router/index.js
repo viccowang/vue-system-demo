@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import Home from '@/components/home/home'
 import History from '@/components/history/history'
 import Project from '@/components/project/project'
-import Aboutme from '@/components/aboutme/aboutme'
 
 Vue.use(Router)
 
@@ -18,11 +17,6 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home
-    },
-    {
-      path: '/aboutme',
-      name: 'aboutme',
-      component: Aboutme
     },
     {
       path: '/history',
