@@ -13,7 +13,7 @@
 <script>
 import Vue from 'vue'
 import echartComs from './echartComs'
-import { Component } from 'vue-property-decorator'  //使用Class(类)的方式创建Vue实例需要引入该组件
+import { Component } from 'vue-property-decorator' // 使用Class(类)的方式创建Vue实例需要引入该组件
 
 @Component({
   components: { echartComs }

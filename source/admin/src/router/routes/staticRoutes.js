@@ -18,9 +18,9 @@ export const constantRouterMap = [
     children: [
       {
         path: 'dash',
-        name: 'dash',
+        name: 'Dashboard',
         component: _import_('Dashboard/index'),
-        meta: { title: 'Dashboard', icon: '', noCache: false } }
+        meta: { title: 'Dashboard', icon: 'el-icon-star-off', noCache: false } }
     ]
   },
   { path: '/401', component: _import_('others/401'), hidden: true },

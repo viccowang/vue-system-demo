@@ -19,3 +19,18 @@ $base-gray-color: #9E9E9E;
 .ps__scrollbar-y-rail {
     z-index:1000;
 }
+
+.sidebar-wrapper{
+    .el-menu-item, .el-submenu__title {
+        height:40px;
+        line-height:40px;
+
+        span {
+            line-height:40px;
+        }
+    }
+
+    .el-submenu .el-menu-item {
+        line-height:40px;
+    }
+}

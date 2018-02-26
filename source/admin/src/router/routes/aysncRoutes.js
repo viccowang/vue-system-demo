@@ -8,19 +8,19 @@ export const aysncRoutesMap = [
   {
     path: '/demo',
     component: Layout,
-    meta: { title: 'Demo', icon: '', role: ['user'] },
+    meta: { title: 'Demo', icon: 'el-icon-news', role: ['user'] },
     children: [
       {
         path: 'demo-list',
-        name: 'demoList',
+        name: 'DemoList',
         component: _import_('DemoList/index'),
-        meta: { title: 'demoList', icon: '', noCache: true }
+        meta: { title: 'demoList', icon: 'el-icon-service' }
       },
       {
         path: 'demo-chart',
-        name: 'demoChart',
+        name: 'DemoChart',
         component: _import_('DemoChart/index'),
-        meta: { title: 'demoChart', icon: '', noCache: false }
+        meta: { title: 'demoChart', icon: 'el-icon-date' }
       }
     ]
   },
@@ -31,9 +31,9 @@ export const aysncRoutesMap = [
     children: [
       {
         path: 'user-list',
-        name: 'userList',
+        name: 'UserList',
         component: _import_('Manage/UserList/index'),
-        meta: { title: 'userList', icon: '' }
+        meta: { title: 'userList', icon: 'el-icon-service' }
       }
     ]
   }

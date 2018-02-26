@@ -6,14 +6,14 @@
                         :to="item.path + '/' + item.children[0].path"
                         :key="item.children[0].name">
                 <el-menu-item :index="item.path + '/' + item.children[0].path" :class="{'submenu-title-noDropdown':!isNest}">
-                    <i :icon-class="item.children[0].meta.icon"></i>
+                    <i :class="item.children[0].meta.icon"></i>
                     <span>{{ item.children[0].meta.title }}</span>
                 </el-menu-item>
             </router-link>
             <!-- have children -->
             <el-submenu v-else :index="item.name || item.path" :key="item.name">
                 <template slot="title">
-                    <i v-if="item.meta && item.meta.icon" :icon-class="item.meta.icon"></i>
+                    <i v-if="item.meta && item.meta.icon" :class="item.meta.icon"></i>
                     <span v-if="item.meta && item.meta.title">{{ item.meta.title }}</span>
                 </template>
                 <template v-for="child in item.children" v-if="!child.hidden">
@@ -22,7 +22,7 @@
                     </sidebar-menu-item>
                     <router-link tag="li" v-else :to="item.path + '/' + child.path" :key="child.name">
                         <el-menu-item :index="item.path + '/' + child.path">
-                            <i v-if="child.meta && child.meta.icon" :icon-class="child.meta.icon"></i>
+                            <i v-if="child.meta && child.meta.icon" :class="child.meta.icon"></i>
                             <span v-if="child.meta && child.meta.title">{{ child.meta.title }}</span>
                         </el-menu-item>
                     </router-link>
