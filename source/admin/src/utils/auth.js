@@ -1,6 +1,6 @@
 import Cookie from 'vue-cookie'
 
-const TOKEN_KEY = 'ViccoResumeToken'
+const TOKEN_KEY = 'Vue-System-Demo'
 
 function getToken () {
   return Cookie.get(TOKEN_KEY)

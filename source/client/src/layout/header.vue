@@ -5,8 +5,7 @@
       <ul>
         <router-link tag="li" to="/home">Home</router-link>
         <router-link tag="li" to="/history">History</router-link>
-        <router-link tag="li" to="/project">Project Experience</router-link>
-        <router-link tag="li" to="/aboutme">About me</router-link>
+        <router-link tag="li" to="/project">Projects</router-link>
       </ul>
     </div>
   </header>
@@ -15,7 +14,7 @@
 <script>
 
 export default {
-  name: 'vicco-resume-header'
+  name: 'system-header'
 }
 </script>
 

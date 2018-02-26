@@ -16,6 +16,7 @@ const store = {
   mutations: {
     SET_TOKEN (state, data) {
       if (data.userToken) {
+        state.token = data.userToken
         setToken(data.userToken)
       }
     },
@@ -30,6 +31,7 @@ const store = {
     RESET_USERINFO (state, data) {
       state.name = ''
       state.avatar = ''
+      state.token = null
       state.roles = null
     }
   },
@@ -43,7 +45,7 @@ const store = {
      * @param {any} params
      * @returns
      */
-    userLogin ({commit}, params) {
+    userLogin ({commit, state}, params) {
       return new Promise((resolve, reject) => {
         http.post('/login', params)
           .then(res => {
@@ -63,8 +65,14 @@ const store = {
      */
     userLogout ({commit}) {
       return new Promise((resolve, reject) => {
+        // 重置用户相关信息
         commit('REMOVE_TOKEN')
         commit('RESET_USERINFO')
+        // 重置浏览记录以及tab页面记录等,该mutation访问 store/views.js
+        commit('REMOVE_ALL_VISITED')
+        // 重置权限路由表, 该mutation 访问 store/asyncRouter.js
+        commit('RESET_ROUTERS')
+        //
         resolve()
       })
     },

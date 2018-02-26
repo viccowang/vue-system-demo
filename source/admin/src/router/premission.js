@@ -4,6 +4,11 @@ import store from '@/store'
 
 const whiteList = ['/login']
 
+/**
+ * TODO: 应该将超管独立出去
+ * @param {*} roles
+ * @param {*} hasMetaRole
+ */
 function hasPermession (roles, hasMetaRole) {
   // admin is the super user
   if (roles.indexOf('admin') >= 0) return true
@@ -14,14 +19,15 @@ function hasPermession (roles, hasMetaRole) {
 }
 
 // premissions
-// 简单昨个登录的验证
-// 这里后面需要挂权限,生成权限路由表
+// 简单登录的验证
+// 这里后面挂权限,生成权限路由表
 router.beforeEach((to, from, next) => {
   if (getToken()) {
     if (to.path === '/login') {
       next('/')
     } else {
       /**
+       * 首次进入系统，刷新页面会需要重新获取用户权限信息
        * 如果没有获取到当前用户的权限数据则需要远程获取用户权限
        */
       if (!store.getters.roles) {
@@ -31,7 +37,12 @@ router.beforeEach((to, from, next) => {
           store.dispatch('generateRouters', res.data.roles)
             .then((res) => {
               router.addRoutes(store.getters.addRouters)
-              next({ ...to, replace: true })
+              // 每次刷新页面都回到dash页面
+              if (to.path !== '/dash') {
+                next({ path: '/', replace: true })
+              } else {
+                next({ ...to, replace: true })
+              }
             })
         })
       } else {
