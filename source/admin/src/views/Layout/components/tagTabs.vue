@@ -55,8 +55,13 @@ export default {
             } else {
               // 保证最后不能出现空visitedList
               // TODO 应该做一个可以默认无法关闭的首页view
-              this.$router.push('/')
-              if (view.path === '/dash') this.$store.dispatch('addVisitedViews', view)
+              this.$router.push({
+                path: '/',
+                query: {
+                  t: new Date().getTime()
+                }
+              })
+              // if (view.path === '/dash') this.$store.dispatch('addVisitedViews', view)
             }
           }
         }
