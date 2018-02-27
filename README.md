@@ -1,6 +1,8 @@
-# 中航讯 前端基础框架 zhx-vue-plateform
+# vue-system-demo
 ---
-#### 技术栈:Vue, Vuex, VueRouter, ElementUI, Webpack etc...
+#### 调研项目基于 Vue & VueX & Vue-router 的前后端管理平台实现套路与前期填坑,代码不完善,未经完整测试;
+
+> Vicco Wang 
 
 ## Build Setup
 
