@@ -15,11 +15,12 @@ $base-gray-color: #9E9E9E;
     align-items: center;
     justify-content: center;
 }
-// 覆盖样式
+// 覆盖原有自定义滚动条样式,保证滚动条始终的层级始终在顶部
 .ps__scrollbar-y-rail {
-    z-index:1000;
+    z-index:500;
 }
 
+// 覆盖sidebar navigation 样式
 .sidebar-wrapper{
     .el-menu-item, .el-submenu__title {
         height:40px;

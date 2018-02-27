@@ -20,4 +20,5 @@ export default class DemoList extends Vue {
   // initial table data()
   tableData = tableData
 }
+
 </script>

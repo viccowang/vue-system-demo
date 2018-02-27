@@ -1,9 +1,16 @@
 <template>
   <div class="tag-tabs">
     <scroll-pane>
-      <router-link tag="div" class="tab-item" v-for="tab in visitedViews" :to="tab.path" :key="tab.path" :class="{active: isActive(tab)}">
-        <span>{{ tab.meta.title }}</span>
-        <span class="close el-icon-close" @click.prevent.stop="closeTab(tab)"></span>
+      <router-link
+        tag="div"
+        class="tab-item"
+        v-for="tab in visitedViews"
+        :to="tab.path"
+        :key="tab.path"
+        :class="{active: isActive(tab), isShowCloseBtn: !isShowCloseBtn(tab)}"
+      >
+        <span >{{ tab.meta.title }}</span>
+        <span v-if="isShowCloseBtn(tab)" class="close el-icon-close" @click.prevent.stop="closeTab(tab)"></span>
       </router-link>
     </scroll-pane>
   </div>
@@ -16,6 +23,11 @@ import scrollPane from '@/components/scrollPane'
 export default {
   name: 'TagTabs',
   components: { scrollPane },
+  data () {
+    return {
+      isDashboard: false
+    }
+  },
   computed: {
     ...mapGetters(['visitedViews'])
   },
@@ -30,6 +42,9 @@ export default {
   methods: {
     isActive (view) {
       return this.$route.path === view.path
+    },
+    isShowCloseBtn (view) {
+      return view.path !== '/dash'
     },
     addViewToVisided () {
       var thisRoute = this.$route.name ? this.$route : null
@@ -85,13 +100,19 @@ export default {
     box-sizing:border-box;
     cursor:pointer;
     overflow: hidden;
+    user-select: none;
+
+    &.isShowCloseBtn > span {
+      padding-right: 10px;
+    }
 
     > span {
       display: inline-block;
 
-      &.close{
+      &.close {
         margin-left:10px;
       }
+
     }
 
     &.active{

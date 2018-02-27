@@ -22,8 +22,8 @@ export default class DemoChart extends Vue {
   // initial Data()
   charts = []
 
-  addChart (componentName, data) {
-    this.charts.push({name: componentName, data: data})
+  addChart (componentName, dataName) {
+    this.charts.push({name: componentName, data: dataName})
   }
 }
 </script>

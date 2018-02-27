@@ -29,26 +29,25 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import { Component } from 'vue-property-decorator'
-
 import { GridLayout, GridItem } from 'vue-grid-layout'
 import { layoutData } from './layoutData'
 
 import './layout.scss'
 
-@Component({
-  components: { GridLayout, GridItem }
-})
-export default class Dashboard extends Vue {
-  // GridLayout Properties
-  // 布局数据
-  layout = layoutData
-  // 一共可放置多少列
-  columnSize = 12
-  // 行高度(px)
-  itemRowHeight = 30
-  // 默认元素间距
-  itemMargin = [10, 10]
+export default {
+  name: 'Dashboard',
+  components: { GridLayout, GridItem },
+  data () {
+    return {
+      // 布局数据
+      layout: layoutData,
+      // 一共可放置多少列
+      columnSize: 12,
+      // 行高度(px)
+      itemRowHeight: 30,
+      // 默认元素间距
+      itemMargin: [10, 10]
+    }
+  }
 }
 </script>

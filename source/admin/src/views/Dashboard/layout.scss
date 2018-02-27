@@ -5,8 +5,6 @@
     user-select: none;
   
     .columns {
-      -moz-columns: 120px;
-      -webkit-columns: 120px;
       columns: 120px;
     }
 
@@ -91,6 +89,6 @@
         background-repeat: no-repeat;
         background-origin: content-box;
         box-sizing: border-box;
-        cursor: pointer;
+        cursor: move;
     }
   }
