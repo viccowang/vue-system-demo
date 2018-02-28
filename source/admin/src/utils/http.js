@@ -43,19 +43,39 @@ function checkResponseCode (response) {
   }
 }
 
+/*
+ * 这里定义的接口都应该符合RESTFul规范
+*/
 export default {
+  // normal method
   get (url, params) {
     if (!url) return
     return axios.get(basePerfix + url, {
       params: params
     }).then(checkResponseStatus).then(checkResponseCode)
   },
-
+  // post request
   post (url, data) {
     if (!url) return
     return axios.post(basePerfix + url, {
       params: data
     }).then(checkResponseStatus).then(checkResponseCode)
+  },
+  // update request for All data
+  put (url, data) {
+
+  },
+  // update request path data
+  patch (url, data) {
+
+  },
+  // delete request
+  delete (url, data) {
+
+  },
+  // head
+  head (url, data) {
+
   }
 
 }
