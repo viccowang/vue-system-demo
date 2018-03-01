@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar">
+    <div class="sidebar" :style="{width: width}">
       <!-- <div class="logo">System LOGO</div> -->
       <div class="side">
         <el-menu mode="vertical"
@@ -19,6 +19,9 @@ import SidebarMenuItem from './SidebarMenuItem'
 
 export default {
   name: 'Sidebar',
+  props: {
+    width: String
+  },
   computed: {
     ...mapGetters(['asyncRouter'])
   },
@@ -35,7 +38,7 @@ $sidebar-background-color: #304156;
 .sidebar{
   display: flex;
   flex-direction: column;
-  width:180px;
+  flex: none;
   background: $sidebar-background-color;
   overflow: hidden;
 

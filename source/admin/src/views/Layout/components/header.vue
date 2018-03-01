@@ -10,7 +10,16 @@
         </div>
         <div class="settings">
         <ul>
-            <li @click="logout">Logout</li>
+            <li>
+                <el-dropdown>
+                    <span>设置</span>
+                    <el-dropdown-menu slot="dropdown">
+                        <el-dropdown-item>个人配置</el-dropdown-item>
+                        <el-dropdown-item>修改密码</el-dropdown-item>
+                    </el-dropdown-menu>
+                </el-dropdown>
+            </li>
+            <li @click="logout">注销</li>
         </ul>
         </div>
     </el-header>
@@ -50,7 +59,6 @@ export default {
             position:absolute;
             height:100%;
             right:0;
-            font-weight:300;
 
             span {
                 display: inline-block;
@@ -71,18 +79,26 @@ export default {
     }
 
     .settings{
-        width:70px;
+        width:120px;
 
         ul{
         display: flex;
+        flex-direction: row;
         height:100%;
 
         li {
+            font-size: 1rem;
             display: inherit;
             @include flexCenter;
             flex:1 auto;
             padding: 0 15px;
             cursor: pointer;
+
+            > div, {
+                font-size:1rem;
+                font-weight:400;
+                color: $base-dark-color;
+            }
         }
 
         }

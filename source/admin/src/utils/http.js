@@ -4,7 +4,8 @@ import { Message } from 'element-ui'
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 // demo api
-const basePerfix = 'https://easy-mock.com/mock/5a7bc4b13ccdb014fb81b49e/resume'
+// const basePerfix = 'https://easy-mock.com/mock/5a7bc4b13ccdb014fb81b49e/resume'
+const basePerfix = 'http://192.168.10.5:3000/mock/13'
 
 // request interceptors
 axios.interceptors.request.use(config => {
@@ -28,6 +29,7 @@ function checkResponseStatus (response) {
   return response
 }
 
+// check server response
 function checkResponseCode (response) {
   const code = response.data.code
   if (code) {

@@ -15,6 +15,18 @@ $base-gray-color: #9E9E9E;
     align-items: center;
     justify-content: center;
 }
+
+// 配置居右显示
+.flex-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+// 块级包裹的内容
+.section-content {
+
+}
+
 // 覆盖原有自定义滚动条样式,保证滚动条始终的层级始终在顶部
 .ps__scrollbar-y-rail {
     z-index:500;
